@@ -1,1 +1,1 @@
-TBA
+We design and implement trustworthy software tools (such as refactorings and compilers) for functional programming languages, primarily by using formal methods (proof assistants like Rocq), and novel methods for testing. Our case study language is Erlang. Besides, we also work on the Rocq formalisation of various formal theories, including variants of matching logic, and corresponding metatheories.
