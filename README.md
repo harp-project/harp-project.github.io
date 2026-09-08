@@ -1,12 +1,14 @@
-We design and implement trustworthy software tools (such as refactorings and compilers) for functional programming languages, primarily by using formal methods and novel testing methods. Our case study language is Erlang. We also work on the formalisation of various formal theories, including variants of matching logic, and corresponding metatheories. We mechanize formal theories in the Rocq interactive theorem prover.
+We design and implement trustworthy software tools (such as refactorings, compilers, and program verifiers) for Erlang, primarily by using formal methods. In the past few years, we have successfully mechanized the Core Erlang language in the Rocq interactive theorem prover, and validated it against the reference implementation. Besides the definition of the sequential and the concurrent features of the language, we have defined program equivalence (contextual, CIU, log.rel., and bisimulations) and applied it in various examples.
+
+Currently, our team is working on building a wide range of applications on the top of the semantics, with the aim of bringing formal methods to the entire BEAM community by building high-assurance software tools.
 
 # Featured repositories
 
  - [Core Erlang mechanized in Rocq](https://github.com/harp-project/Core-Erlang-Formalization)
- - [Applicative Matching Logic mechanized in Rocq](https://github.com/harp-project/AML-Formalization)
  - [Property-based testing of Erlang formal semantics](https://github.com/harp-project/erlang-semantics-testing)
- - [Property-based testing of Erlang program equivalence](https://github.com/harp-project/EquivcheckEr)
+ - [Applicative Matching Logic mechanized in Rocq](https://github.com/harp-project/AML-Formalization)
 
 # Featured publications
 
- - P. Bereczky, "Proof Assistant-Based Formalisation of Core Erlang," Ph.D. dissertation, Dept. Program. Lang. and Compilers, Eötvös Loránd Univ., Budapest, Hungary, 2025. [http://dx.doi.org/10.15476/ELTE.2025.413](https://doi.org/10.15476/ELTE.2025.413)
+ - P. Bereczky, "Proof Assistant-Based Formalisation of Core Erlang," Ph.D. dissertation, Dept. Program. Lang. and Compilers, Eötvös Loránd Univ., Budapest, Hungary, 2025. https://doi.org/10.15476/ELTE.2025.413
+ - P. Bereczky, D. Horpácsi, "Formally Based Tools for Safer Erlang" CODE BEAM Europe 2025. https://www.youtube.com/watch?v=_GygjVGrrzs
