@@ -41,6 +41,6 @@ Our team carries out a 4-year (2025-2028) project that develops a certified opti
 
 # Contact
 
-- Dániel Horpácsi (daniel-h@elte.hu)
-- Péter Bereczky (berpeti@inf.elte.hu)
-- Simon Thompson (s.j.thompson@kent.ac.uk)
+- Dániel Horpácsi (daniel-h AT elte.hu)
+- Péter Bereczky (berpeti AT inf.elte.hu)
+- Simon Thompson (s.j.thompson AT kent.ac.uk)
