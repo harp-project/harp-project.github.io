@@ -1,14 +1,14 @@
-**We design and implement trustworthy software tools (such as refactorings, compilers, and program verifiers) for Erlang, using formal methods.**
+**We design and implement trustworthy software tools for Erlang, by using formal methods.**
 
-In the past few years, we have mechanized the Core Erlang language in the Rocq interactive theorem prover. Currently, our team is working on building a wide range of applications on the top of this mechanized formal semantics. We want to bring high-assurance to the entire BEAM community by building formally based tools.
+Our key asset is a formal semantics for Core Erlang, mechanized in Rocq theorem prover. Besides developing this formal foundation, our team is working on creating applications on the top of this mechanized formal semantics, because we want to build formally based, high-assurance tools to the entire BEAM community.
 
-# 🏛️ A mechanized formal semantics for Core Erlang
+# A mechanized formal semantics for Core Erlang
 
 Formal semantics describe programming languages with mathematical precision. With the semantics, one can examine program behaviour, define program equivalence, and formally verify program correctness or program safety. We defined formal semantics for Core Erlang, a standard intermediate language in Erlang/OTP; this allows us to develop high assurance tools not only for Erlang but also for other BEAM-based languages such as Elixir, Gleam and LFE.
 
-[Our mechanized formal semantics](https://github.com/harp-project/Core-Erlang-Formalization) includes the complete, mathematically precise definition of the behaviour of both the sequential and the concurrent features of Core Erlang. In particular, we have a fairly complete mechanization of Erlang's actor model. Furthermore, we have defined program equivalence (contextual, CIU, log.rel., and bisimulations) so we can mathematically prove if two programs behaviours are indistinguishable.
+[Our mechanized formal semantics](https://github.com/harp-project/Core-Erlang-Formalization) includes a fairly complete, mathematically precise definition of the behaviour of sequential and concurrent features of (Core) Erlang, including the actor model and its fault tolerance features. Furthermore, we defined program equivalence so we can mathematically prove or disprove if two programs behaviours are indistinguishable, enabling the verification of refactoring and optimisation.
 
-Our formal definition has been [validated against the reference implementation](https://github.com/harp-project/erlang-semantics-testing) (i.e. we tested if the behaviour we defined for programs matches their behaviour when run in the interpreter).
+Our formal definition has been [validated against the reference implementation](https://github.com/harp-project/erlang-semantics-testing), that is, it is assured by automated testing that the behaviour we defined for programs matches their behaviour when run in the interpreter.
 
 Technical highlights:
  - representative coverage of Core Erlang including semantics of the Erlang actor model
@@ -18,7 +18,13 @@ Technical highlights:
 
 # Security verification
 
+The formal semantics defines every possible behaviour of programs, finite or infinite, deterministic or nondeterministic. Vulnerable behaviour can be mathematically defined, and formally verified and machine-checked in our implementation. As a first case study, our team has demonstrated [proving atom exhaustion vulnerabilities](https://github.com/harp-project/Core-Erlang-Formalization/blob/master/src/FrameStack/Vulnerabilities/AtomExhaustion.v) by using a calculus tailored for this proof domain. We are looking forward to extend this work by formally defining security guidelines and certifying compliance, as well as formally verifying CVE affectedness (pending grant application to HORIZON-CL3-2026-02-CS-ECCC-01).
+
 # Property verification
+
+Our formal semantics defines the behaviour over the abstract syntax deeply embedded in the theorem prover. This means that programs can be processed by the semantics without translation, but by a trivial mapping from the abstract format to the abstract syntax used in the theorem prover. We can state correctness properties about the programs and we can verify them against all possible behaviours identified by the semantics. Work-in-progress in this topic is demonstrated by automatically proving basic properties of [integer-processing recursive functions](https://github.com/harp-project/Core-Erlang-Formalization/pull/58) and [list-processing recursive functions](https://github.com/harp-project/Core-Erlang-Formalization/pull/66). These prototypes formalise Hoare-triples that were manually constructed from QuickCheck properties, but automatic translation for these is a straightforward, technical step.
+
+Note that our method for property verification is fundamentally different from the approach used in [Lynx](https://github.com/josevalim/lynx). Although both are based on the idea of turning contracts and program properties into proof obligations, Lynx translates Elixir programs into Lean by using a shallow embedding of functions, so that Elixir functions become Lean functions and their behaviour is defined by Lean's semantics. The Lynx approach therefore incorporates a large portion of unverified, trusted code base that brings programs and their specifications into the Lean theorem prover. This may undermine the validity of the proofs constructed and verified, because it is a significant challenge to tell whether the property proved formally is reflected in the program's actual behaviour. In contrast, our approach uses deeply embedded language and semantics in the theorem prover, so the program behaviour is defined explicitly and is therefore independent of the host language semantics.
 
 # Certified compilation
 
