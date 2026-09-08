@@ -38,3 +38,9 @@ Our team carries out a 4-year (2025-2028) project that develops a certified opti
 - Arsenii Fomin, Péter Bereczky, Dániel Horpácsi, and Gergő Lajos Turán, "Mechanised Proofs of Atom Exhaustion in Erlang." In Proceedings of the 24th ACM SIGPLAN International Workshop on Erlang (Erlang '25). Association for Computing Machinery, New York, NY, USA, 14–25. 2025. [DOI](https://doi.org/10.1145/3759161.3763045)
 - Gergő Lajos Turán, Arsenii Fomin, Péter Bereczky, Dániel Horpácsi, and Simon Thompson, "Deriving an Erlang Interpreter from a Mechanised Formal Semantics of Core Erlang." In Proceedings of the 24th ACM SIGPLAN International Workshop on Erlang (Erlang '25). Association for Computing Machinery, New York, NY, USA, 26–39. 2025. [DOI](https://doi.org/10.1145/3759161.3763046)
 - Péter Bereczky, Dániel Horpácsi, Judit Kőszegi, Soma Szeier, and Simon Thompson, "Validating Formal Semantics by Property-Based Cross-Testing." In Proceedings of the 32nd Symposium on Implementation and Application of Functional Languages (IFL '20). Association for Computing Machinery, New York, NY, USA, 150–161. 2021. [DOI](https://doi.org/10.1145/3462172.3462200)
+
+# Contact
+
+- Dániel Horpácsi (daniel-h@elte.hu)
+- Péter Bereczky (berpeti@inf.elte.hu)
+- Simon Thompson (s.j.thompson@kent.ac.uk)
