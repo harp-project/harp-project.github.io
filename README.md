@@ -1,6 +1,10 @@
 We design and implement trustworthy software tools (such as refactorings, compilers, and program verifiers) for Erlang, primarily by using formal methods. In the past few years, we have successfully mechanized the Core Erlang language in the Rocq interactive theorem prover, and validated it against the reference implementation. Besides the definition of the sequential and the concurrent features of the language, we have defined program equivalence (contextual, CIU, log.rel., and bisimulations) and applied it in various examples.
 
-Currently, our team is working on building a wide range of applications on the top of the semantics, with the aim of bringing formal methods to the entire BEAM community by building high-assurance software tools.
+Currently, our team is working on building a wide range of applications on the top of the formal semantics. We want to bring high assurance and formal methods to the entire BEAM community.
+
+# A mechanized formal semantics for Core Erlang
+
+Formal semantics describe programming languages with mathematical precision. With the semantics, one can examine program behaviour, define program equivalence, and formally verify program correctness or program safety. We defined formal semantics for Core Erlang, a standard intermediate language in Erlang/OTP. This allows us to develop high assurance tools not only for Erlang but also for other BEAM-based languages such as Elixir, Gleam and LFE.
 
 # Featured repositories
 
