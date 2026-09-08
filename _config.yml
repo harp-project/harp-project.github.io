@@ -1,3 +1,3 @@
 title: High-Assurance Refactoring Project
-description: TBD
+description: We design and implement trustworthy software tools (such as refactorings and compilers) for functional programming languages, primarily by using formal methods and novel testing methods. Our case study language is Erlang. We also work on the formalisation of various formal theories, including variants of matching logic, and corresponding metatheories. We mechanize formal theories in the Rocq interactive theorem prover.
 theme: jekyll-theme-minima
