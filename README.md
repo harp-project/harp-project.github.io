@@ -9,4 +9,4 @@ We design and implement trustworthy software tools (such as refactorings and com
 
 # Featured publications
 
- - P. Bereczky, "Proof Assistant-Based Formalisation of Core Erlang," Ph.D. dissertation, Dept. Program. Lang. and Compilers, Eötvös Loránd Univ., Budapest, Hungary, 2025. http://dx.doi.org/10.15476/ELTE.2025.413
+ - P. Bereczky, "Proof Assistant-Based Formalisation of Core Erlang," Ph.D. dissertation, Dept. Program. Lang. and Compilers, Eötvös Loránd Univ., Budapest, Hungary, 2025. [http://dx.doi.org/10.15476/ELTE.2025.413](https://doi.org/10.15476/ELTE.2025.413)
