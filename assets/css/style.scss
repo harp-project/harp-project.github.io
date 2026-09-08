@@ -14,6 +14,9 @@ $header-bg-color-secondary: $rocq-gray-bottom;
 $header-heading-color: #ffffff;
 $header-bg-text-color: #a1a1aa;
 
+$section-headings-color: $rocq-blue;         // H1, H2, H3 elements
+$body-link-color: $rocq-blue;                // Content link color
+
 @import "jekyll-theme-cayman";
 
 .page-header .btn {
