@@ -1,18 +1,14 @@
 **We design and implement trustworthy software tools (such as refactorings, compilers, and program verifiers) for Erlang, using formal methods.**
 
-In the past few years, we have successfully mechanized the Core Erlang language in the Rocq interactive theorem prover, and validated it against the reference implementation. Besides the definition of the sequential and the concurrent features of the language, we have defined program equivalence (contextual, CIU, log.rel., and bisimulations) and applied it in various examples.
-
-Currently, our team is working on building a wide range of applications on the top of the formal semantics. We want to bring high assurance and formal methods to the entire BEAM community.
+In the past few years, we have mechanized the Core Erlang language in the Rocq interactive theorem prover. Currently, our team is working on building a wide range of applications on the top of this mechanized formal semantics. We want to bring high-assurance to the entire BEAM community by building formally based tools.
 
 # A mechanized formal semantics for Core Erlang
 
-Formal semantics describe programming languages with mathematical precision. With the semantics, one can examine program behaviour, define program equivalence, and formally verify program correctness or program safety. We defined formal semantics for Core Erlang, a standard intermediate language in Erlang/OTP. This allows us to develop high assurance tools not only for Erlang but also for other BEAM-based languages such as Elixir, Gleam and LFE.
+Formal semantics describe programming languages with mathematical precision. With the semantics, one can examine program behaviour, define program equivalence, and formally verify program correctness or program safety. We defined formal semantics for Core Erlang, a standard intermediate language in Erlang/OTP; this allows us to develop high assurance tools not only for Erlang but also for other BEAM-based languages such as Elixir, Gleam and LFE.
 
-# Featured repositories
+[Our mechanized formal semantics](https://github.com/harp-project/Core-Erlang-Formalization) includes the complete, mathematically precise definition of the behaviour of both the sequential and the concurrent features of Core Erlang. In particular, we have a fairly complete mechanization of Erlang's actor model. Furthermore, we have defined program equivalence (contextual, CIU, log.rel., and bisimulations) so we can mathematically prove if two programs behaviours are indistinguishable.
 
- - [Core Erlang mechanized in Rocq](https://github.com/harp-project/Core-Erlang-Formalization)
- - [Property-based testing of Erlang formal semantics](https://github.com/harp-project/erlang-semantics-testing)
- - [Applicative Matching Logic mechanized in Rocq](https://github.com/harp-project/AML-Formalization)
+Our formal definition has been [validated against the reference implementation](https://github.com/harp-project/erlang-semantics-testing) (i.e. we tested if the behaviour we defined for programs matches their behaviour when run in the interpreter).
 
 # Featured publications
 
