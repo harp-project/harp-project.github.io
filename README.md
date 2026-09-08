@@ -1,6 +1,6 @@
 **We design and implement trustworthy software tools for Erlang, by using formal methods.**
 
-Our key asset is a formal semantics for Core Erlang, mechanized in Rocq theorem prover. Besides developing this formal foundation, our team is working on creating applications on the top of this mechanized formal semantics, because we want to build formally based, high-assurance tools to the entire BEAM community.
+Our key asset is a formal semantics for Core Erlang, mechanized in the Rocq theorem prover. Besides developing this formal foundation, our team is working on creating applications on the top of this mechanized formal semantics, because we want to build formally based, high-assurance tools to the entire BEAM community.
 
 # A mechanized formal semantics for Core Erlang
 
