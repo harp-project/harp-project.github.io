@@ -1,36 +1,28 @@
 ---
 ---
 
-// 1. Rocq Prover Palette Definitions
-$rocq-blue: #260085;
-$rocq-blue-dark: #190059;
+// Rocq Website Dark Gradient Palette
+$rocq-dark-top: #161618;
+$rocq-gray-bottom: #252529;
 $rocq-orange: #ff540a;
 $rocq-orange-hover: #e04500;
-$rocq-legacy-tan: #d0b68c;
 
-// 2. Override Cayman Header & Global Variables
-$header-bg-color: $rocq-blue-dark;           // Left side gradient
-$header-bg-color-secondary: $rocq-blue;      // Right side gradient
-$header-heading-color: $rocq-orange;         // Main header title
-$header-bg-text-color: $rocq-legacy-tan;     // Tagline text
+// Set Cayman Header to transition from near-black to dark slate gray
+$header-bg-color: $rocq-dark-top;
+$header-bg-color-secondary: $rocq-gray-bottom;
+$header-heading-color: #ffffff;
+$header-bg-text-color: #a1a1aa;
 
-$section-headings-color: $rocq-blue;         // H1, H2, H3 elements
-$body-link-color: $rocq-blue;                // Content link color
-
-// 3. Import Cayman Core Theme
 @import "jekyll-theme-cayman";
 
-// 4. Custom Component Overrides (Buttons & Links)
 .page-header .btn {
   color: #ffffff;
   background-color: $rocq-orange;
   border-color: $rocq-orange;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
 
   &:hover {
     background-color: $rocq-orange-hover;
     border-color: $rocq-orange-hover;
-    color: #ffffff;
   }
 }
 
@@ -46,3 +38,4 @@ blockquote {
   border-left-color: $rocq-orange;
   color: #555555;
 }
+
