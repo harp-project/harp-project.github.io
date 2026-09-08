@@ -1,4 +1,4 @@
-We design and implement trustworthy software tools (such as refactorings and compilers) for functional programming languages, primarily by using formal methods (proof assistants like Rocq), and novel methods for testing. Our case study language is Erlang. Besides, we also work on the Rocq formalisation of various formal theories, including variants of matching logic, and corresponding metatheories.
+We design and implement trustworthy software tools (such as refactorings and compilers) for functional programming languages, primarily by using formal methods and novel testing methods. Our case study language is Erlang. We also work on the formalisation of various formal theories, including variants of matching logic, and corresponding metatheories. We mechanize formal theories in the Rocq interactive theorem prover.
 
 # Featured repositories
 
@@ -9,4 +9,4 @@ We design and implement trustworthy software tools (such as refactorings and com
 
 # Featured publications
 
- - TBD
+ - P. Bereczky, "Proof Assistant-Based Formalisation of Core Erlang," Ph.D. dissertation, Dept. Program. Lang. and Compilers, Eötvös Loránd Univ., Budapest, Hungary, 2025. http://dx.doi.org/10.15476/ELTE.2025.413
