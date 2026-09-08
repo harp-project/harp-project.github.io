@@ -18,7 +18,7 @@ Technical highlights:
 
 # Security verification
 
-The formal semantics defines every possible behaviour of programs, finite or infinite, deterministic or nondeterministic. Vulnerable behaviour can be mathematically defined, and formally verified and machine-checked in our implementation. As a first case study, our team has demonstrated [proving atom exhaustion vulnerabilities](https://github.com/harp-project/Core-Erlang-Formalization/blob/master/src/FrameStack/Vulnerabilities/AtomExhaustion.v) by using a calculus tailored for this proof domain. We are looking forward to extend this work by formally defining security guidelines and certifying compliance, as well as formally verifying CVE affectedness (pending grant application to HORIZON-CL3-2026-02-CS-ECCC-01).
+The formal semantics defines every possible behaviour of programs, finite or infinite, deterministic or nondeterministic. Vulnerable behaviour can be mathematically defined, and formally verified and machine-checked in our implementation. As a first case study, our team has demonstrated [proving atom exhaustion vulnerabilities](https://github.com/harp-project/Core-Erlang-Formalization/blob/master/src/FrameStack/Vulnerabilities/AtomExhaustion.v) by using a calculus tailored for this proof domain. We are looking forward to extend this work by formally defining security guidelines and certifying compliance, as well as formally verifying CVE affectedness (pending Horizon Europe grant application).
 
 # Property verification
 
@@ -28,7 +28,7 @@ We can state correctness properties about the programs and we can verify them ag
 
 # Certified compilation
 
-Our team carries out a 4-year (2025-2028) project that develops a certified optimising compiler for Core Erlang. We will implement a compilation from Core Erlang to BEAM via ANF and SSA, and will implement and verify many of the standard optimisation steps also available in the Erlang/OTP compiler. Currently, the intermediate languages are under development, investigating a common language metatheory that facilities the verification of translation and optimisation steps.
+Our team carries out a 4-year (2026-2029) project that develops a certified optimising compiler for Core Erlang. We will implement a compilation from Core Erlang to BEAM via ANF and SSA, and will implement and verify many of the standard optimisation steps also available in the Erlang/OTP compiler. Currently, the intermediate languages are under development, investigating a common language metatheory that facilities the verification of translation and optimisation steps.
 
 # Featured publications
 
