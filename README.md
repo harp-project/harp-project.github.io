@@ -11,12 +11,9 @@ Formal semantics describe programming languages with mathematical precision. Wit
 Our formal definition has been [validated against the reference implementation](https://github.com/harp-project/erlang-semantics-testing) (i.e. we tested if the behaviour we defined for programs matches their behaviour when run in the interpreter).
 
 Technical highlights:
- - representative coverage of Core Erlang
- - concurrency semantics of the Erlang actor model
- - deep embedding
- - de Bruijn variables
- - substitution theory
- - frame stack style small-step semantics
+ - representative coverage of Core Erlang including semantics of the Erlang actor model
+ - deep embedding with de Bruijn variables and substitution theory
+ - frame stack style small-step semantics with corresponding metatheory
  - contextual and CIU equivalence, logical relations, barbed bisimulation
 
 # Security verification
