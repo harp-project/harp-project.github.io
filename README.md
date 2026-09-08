@@ -1,4 +1,6 @@
-We design and implement trustworthy software tools (such as refactorings, compilers, and program verifiers) for Erlang, primarily by using formal methods. In the past few years, we have successfully mechanized the Core Erlang language in the Rocq interactive theorem prover, and validated it against the reference implementation. Besides the definition of the sequential and the concurrent features of the language, we have defined program equivalence (contextual, CIU, log.rel., and bisimulations) and applied it in various examples.
+*We design and implement trustworthy software tools (such as refactorings, compilers, and program verifiers) for Erlang, primarily by using formal methods.*
+
+In the past few years, we have successfully mechanized the Core Erlang language in the Rocq interactive theorem prover, and validated it against the reference implementation. Besides the definition of the sequential and the concurrent features of the language, we have defined program equivalence (contextual, CIU, log.rel., and bisimulations) and applied it in various examples.
 
 Currently, our team is working on building a wide range of applications on the top of the formal semantics. We want to bring high assurance and formal methods to the entire BEAM community.
 
