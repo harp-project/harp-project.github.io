@@ -1,0 +1,16 @@
+---
+---
+
+// 1. Custom Header Variables
+$header-bg-color: #1a1e24; // Left side gradient color
+$header-bg-color-secondary: #0d1117; // Right side gradient color
+$header-heading-color: #ffffff; // Main title color
+$header-bg-text-color: #8b949e; // Subtitle color
+
+// 2. Import the Cayman theme
+@import "jekyll-theme-cayman";
+
+// 3. Custom CSS rules (Optional)
+.page-header {
+  padding: 3rem 2rem; // Adjust header height/padding
+}
