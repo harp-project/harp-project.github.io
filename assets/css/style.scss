@@ -11,7 +11,7 @@ $rocq-legacy-tan: #d0b68c;
 // 2. Override Cayman Header & Global Variables
 $header-bg-color: $rocq-blue-dark;           // Left side gradient
 $header-bg-color-secondary: $rocq-blue;      // Right side gradient
-$header-heading-color: #ffffff;               // Main header title
+$header-heading-color: $rocq-orange;         // Main header title
 $header-bg-text-color: $rocq-legacy-tan;     // Tagline text
 
 $section-headings-color: $rocq-blue;         // H1, H2, H3 elements
