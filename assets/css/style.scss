@@ -11,7 +11,7 @@ $rocq-orange-hover: #e04500;
 // Set Cayman Header to transition from near-black to dark slate gray
 $header-bg-color: $rocq-dark-top;
 $header-bg-color-secondary: $rocq-gray-bottom;
-$header-heading-color: #ffffff;
+$header-heading-color: $rocq-orange;         // Main header title
 $header-bg-text-color: #a1a1aa;
 
 $section-headings-color: $rocq-blue;         // H1, H2, H3 elements
