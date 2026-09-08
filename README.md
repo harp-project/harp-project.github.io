@@ -2,7 +2,7 @@
 
 In the past few years, we have mechanized the Core Erlang language in the Rocq interactive theorem prover. Currently, our team is working on building a wide range of applications on the top of this mechanized formal semantics. We want to bring high-assurance to the entire BEAM community by building formally based tools.
 
-# 🔥 A mechanized formal semantics for Core Erlang
+# 🏛️ A mechanized formal semantics for Core Erlang
 
 Formal semantics describe programming languages with mathematical precision. With the semantics, one can examine program behaviour, define program equivalence, and formally verify program correctness or program safety. We defined formal semantics for Core Erlang, a standard intermediate language in Erlang/OTP; this allows us to develop high assurance tools not only for Erlang but also for other BEAM-based languages such as Elixir, Gleam and LFE.
 
