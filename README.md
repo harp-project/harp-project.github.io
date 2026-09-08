@@ -31,6 +31,8 @@ Note that our method for property verification is fundamentally different from t
 
 # Certified compilation
 
+Our team carries out a 4-year (2025-2028) project that develops a certified optimising compiler for Core Erlang. We will implement a compilation from Core Erlang to BEAM via ANF and SSA, and will implement and verify many of the standard optimisation steps also available in the Erlang/OTP compiler. Currently, the intermediate languages are under development, investigating a common language metatheory that facilities the verification of translation and optimisation steps.
+
 # Featured publications
 
 - Benjamin Rosta, "Property-based verification of Erlang functions using formal methods." M.S.c. thesis, Dept. Prog. Lang. and Compilers, Eötvös Loránd Univ., Budapest, Hungary, 2026. [PDF](https://beng.web.elte.hu/works/Benjamin_Rosta_MSc_thesis.pdf)
