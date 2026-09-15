@@ -1,7 +1,11 @@
 title: High-Assurance Refactoring Project
-description: 
+description:
 theme: jekyll-theme-cayman
 
 sidebar:
   - getting-started
   - semantics
+
+# README.md should be the main page
+readme_index:
+  with_frontmatter: true
