@@ -1,3 +1,8 @@
+---
+layout: default
+id: getting-started
+---
+
 **We design and implement trustworthy software tools for Erlang, by using formal methods.**
 
 Our key asset is a formal semantics for Core Erlang, mechanized in the Rocq theorem prover. Besides developing this formal foundation, our team is working on creating applications on top of the mechanized formal semantics, because we want to build formally based, high-assurance tools for the BEAM community.

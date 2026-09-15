@@ -1,9 +1,12 @@
 ---
 layout: default
-title: Semantics
-description: Formal semantics for Core Erlang
+title: The formal semantics of Core Erlang
+description:
 permalink: /semantics/
+id: semantics
 ---
+
+This page provides a discussion our work on formalising Core Erlang in the Rocq proof assistant, and highlights some of the most influential results of the project so far.
 
 # A short introduction of Core Erlang
 
