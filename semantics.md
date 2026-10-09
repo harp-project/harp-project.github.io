@@ -6,11 +6,13 @@ permalink: /semantics/
 id: semantics
 ---
 
-This page provides a discussion our work on formalising Core Erlang in the Rocq proof assistant, and highlights some of the most influential results of the project so far.
+This page provides a detailed discussion of our work on formalising Core Erlang in the Rocq proof assistant, and highlights some of the essentia (an hopyfully influential) results of the project so far.
 
 # A short introduction of Core Erlang
 
-Core Erlang is an intermediate language in the compilation pipeline of Erlang (and of other popular languages, such as Elixir and Gleam). It is the target of numerous optimization steps of the compiler (such as [constant folding](https://www.erlang.org/blog/core-erlang-optimizations/), or dead code elimination). Consider the following simple function computing the factorial of a number:
+Core Erlang is an intermediate language in the compilation pipeline of Erlang (as well as Elixir and Gleam). It is the target of numerous optimization steps of the compiler (such as [constant folding](https://www.erlang.org/blog/core-erlang-optimizations/), or dead code elimination).
+
+Consider the following simple function computing the factorial of a number:
 
 ```erlang
 fact(N) when N =:= 0 -> 1;
@@ -59,15 +61,15 @@ While with only `[to_core]`, we get the following, optimized variant (which does
       -| [{'function',{'fact',1}}] )
 ```
 
-Even from these code examples, a number of notable features of Core Erlang appear that do not exist, or behave in a different way than in Erlang. Just to mention a few features (visible in the code above):
+Even from these code examples, a number of notable features of Core Erlang appear that do not exist (or behave in a different way) in Erlang. To mention but a few:
 
 - There is no multiclause function definition. Multiclause Erlang functions get translated to explicit `case` expressions with guards.
 - `case` expression clauses always have explicit guards. If the guard evaluates to an exception, then the entire case expression evaluates to that exception.
 - There are multiple ways to apply functions: `call` is used for inter-module function application (with explicit module and function name arguments), while `apply` is reserved for local functions.
-- `let` expressions are used to assign names to subexpressions; however, `let` expressions do not contain pattern matching (in contrast with match expressions of Erlang).
+- `let` expressions are used to assign names to subexpressions; however, `let` expressions do not contain pattern matching (in contrast with match expressions in Erlang).
 - The compiled code is annotated with `-|` containing compilation information.
 
-Furthermore, numerous other Erlang language features get translated to their more primitive Core Erlang counterpart (or a combination of more primitive Core Erlang expressions). For example, `receive` expressions are expressed with primitive operations and recursion, list comprehensions are unfolded as an explicit recursive function, and `if` expressions get translated to `case` expressions. This means that Core Erlang has far fewer language elements than Erlang, and therefore, it is simpler to define its semantics, and simpler to reason about program behavior in general. On the other hand, Core Erlang is more verbose and significantly less readable than Erlang---however, this was not its purpose.
+Furthermore, numerous other Erlang language features get translated to their more primitive Core Erlang counterpart (or a combination of more primitive Core Erlang expressions). For example, `receive` expressions are expressed with primitive operations and recursion, list comprehensions are unfolded as an explicit recursive function, and `if` expressions get translated to `case` expressions. This means that Core Erlang has far fewer language elements than Erlang, and therefore, it is more tractable to define formally. On the other hand, Core Erlang is more verbose and significantly less readable than Erlang as it is not meant to be a surface language.
 
 For the reasons above, defining a semantics of Core Erlang is more advantageous than targeting Erlang, Elixir or Gleam: 1) we can exploit trusted translation of Erlang, Elixir and Gleam to Core Erlang to indirectly reason about programs written in the original language, 2) the language of Core Erlang is much smaller and simpler to define formally than the higher-level languages.
 
@@ -75,11 +77,11 @@ For the reasons above, defining a semantics of Core Erlang is more advantageous 
 
 A *formal semantics* is a mathematically precise description of program behavior: it defines exactly what program execution does, using mathematical objects and rules rather than prose in a manual or the behavior of a particular compiler. Because the definition is unambiguous, it can settle questions informal descriptions leave open, such as whether two programs always behave the same or whether an optimization preserves meaning.
 
-A *mechanized semantics* is a formal semantics encoded in a proof assistant (in our case, the [Rocq prover](https://rocq-prover.org/)) rather than existing only on paper. The syntax, the evaluation rules, and every proof about them---for instance that evaluation is deterministic, or that a transformation preserves the meaning---are checked by the machine down to primitive inference steps. Mechanization rules out the gaps and unstated assumptions that hand-written proofs often hide, and it gives us a solid foundation for larger verified work. Furthermore---since Rocq is essentially a functional programming language---definitions and functions are executable, and therefore, a function-based semantics can also serve as an [interpreter for the programming language](https://github.com/harp-project/Core-Erlang-Formalization/tree/master/src/Interpreter).
+A *mechanized semantics* is a formal semantics encoded in a proof assistant (in our case, the [Rocq prover](https://rocq-prover.org/)) rather than existing only on paper. The syntax, the evaluation rules, and every proof about them---for instance that evaluation is deterministic, or that a transformation preserves the meaning---are checked by the machine down to primitive inference steps. Mechanization rules out the gaps and unstated assumptions that hand-written proofs often hide, and it gives a solid foundation for larger verified work. Furthermore---since Rocq is essentially a functional programming language---definitions and functions are executable, and therefore, a function-based semantics can also serve as an [interpreter for the programming language](https://github.com/harp-project/Core-Erlang-Formalization/tree/master/src/Interpreter). Nevertheless, we emphasise that the encoding we use is a deep embedding: instead of translating Core Erlang functions to Rocq functions, we model Core Erlang functions as data in Rocq and define explicitly how they are interpreted.
 
 # The syntax and formal semantics of Core Erlang
 
-In this section, we discuss what features of Core Erlang have been implemented in our formal semantics, and how they behave. Core Erlang has an [official language specification](https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1695554&dswid=7248) written in 2000 which is now outdated. Therefore, our semantics has been based not only on this specification, but also on other related research, online materials (some are highlighted under "Further reading"), and the official implementation of the Erlang compiler. Here, we summarize the syntax and behavior of Core Erlang informally; however, everything presented here is expressed in mathematics and logic, and also implemented in the [Rocq prover](https://rocq-prover.org/).
+In this section, we discuss which features of Core Erlang have been implemented in our formal semantics, and how they behave. Core Erlang has an [official language specification](https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1695554&dswid=7248), but it was written back in 2000 and became outdated. Therefore, our semantics has been based not only on this specification, but also on other related research, online materials (some are highlighted under "Further reading"), and the official implementation of the Erlang compiler. Here, we summarise the syntax and behavior of Core Erlang informally; however, everything presented here is expressed in mathematics and logic, and also implemented in the [Rocq prover](https://rocq-prover.org/).
 
 ## Sequential features
 
