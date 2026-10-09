@@ -89,7 +89,7 @@ We will use `v` (and its indexed variants) to denote values, `e` for expressions
 
 ### Values (denoted with `v`)
 
-Values represent the result of computation, and not all values can be explicitly written in as Core Erlang code. For example, closures cannot be constructed directly, but they are the result of evaluating a function expression.
+Values represent the result of computation, and not all values can be explicitly written in Core Erlang code. For example, closures cannot be constructed directly, but they are the result of evaluating a function expression.
 
 - Literals: `[]` denotes the empty list, `i` is used for integers, `a` is used for atoms. Concrete atoms are always enclosed with apostrophes `'` in Core Erlang.
 - Lists (constructed as `[v_1|v_2]`) consist of a head and a tail value.
@@ -106,7 +106,7 @@ Patterns have the same structure as values (except for closures and function ide
 - Literal patterns only match the same literal values (e.g., `1` matches `1`, but not `[]`).
 - Lists patterns (`[p_1|p_2]`) only match list values (`[v_1|v_2]`), and only if `p_1` matches `v_1`, and `p_2` matches `v_2`.
 - Tuple patterns (`{p_1, p_2, ..., p_n}`) only match tuple values (`{v_1, v_2, ..., v_n}`), and only if their components pairwise match (i.e. for all `i`, `p_i` matches `v_i`).
-- Map patterns (`{p_1 := p_1', p_2 := p_2', ..., p_n := p_n'}`) only match map values (`{v_1 => v_1', v_2 => v_2', ..., v_n => v_n'}`), and only if their components pairwise match.
+- Map patterns (`{p_1 := p_1', p_2 := p_2', ..., p_n := p_n'}`) only match map values (`{v_1 => v_1', v_2 => v_2', ..., v_n => v_n'}`), and only if their components match pairwise.
 - Variable patterns match any value, and this value will be bound in the corresponding clause (guard and body expressions) of the enclosing `case` expression. Nonlinear patterns are not allowed in Core Erlang (cf. Erlang), which means that including a bound variable in a pattern shadows the outer occurrence. For example, the following expression will evaluate to `2` without raising an exception.
 
    ```
@@ -219,7 +219,7 @@ Values are the simplest expressions, and they evaluate to themselves enclosed in
   <details markdown="1">
   <summary>Evaluation</summary>
 
-  Note that the name of primitive operations is expected to be an atom (it is not an expression). The subexpressions of primitive operations are evaluated in a left-to-right order. All subexpressions are expected to evaluate to singleton value sequences (i.e., `<v_1>`, `<v_2>`, ...). The semantics then simulates the primitive operation called `a` with the actual arguments `v_1, v_2, ...`. If the function expression does not evaluate to a closure, or the argument counts mismatch, then an exception is raised.
+  Note that the name of primitive operations is expected to be an atom (it is not an expression). The subexpressions of primitive operations are evaluated in a left-to-right order. All subexpressions are expected to evaluate to singleton value sequences (i.e., `<v_1>`, `<v_2>`, ...). The semantics then simulates the primitive operation called `a` with the actual arguments `v_1, v_2, ...`.
 
   </details>
 
@@ -345,7 +345,7 @@ Our semantics of Core Erlang also formalizes a subset of Erlang's actor model. H
 
 The entire description above is mechanized in the [Rocq prover](https://rocq-prover.org/), in the [Core-Erlang-Formalization](https://github.com/harp-project/Core-Erlang-Formalization) repository. The abstract syntax is represented in a nameless style: variables and function identifiers are de Bruijn indices (`Var := nat`), and well-formedness is captured by inductive scoping predicates that track how many binders are in scope. The sequential language is given a substitution-based frame-stack semantics: a small-step relation that uses explicit continuation frames, together with its reflexive-transitive closure describing complete evaluations. The concurrent layer extends this with a process-local relation (message receipts, spawning, links, exit signals for a single process) and an inter-process relation that routes signals between processes running on a node.
 
-Alongside the relational semantics, the development provides an [executable interpreter](https://github.com/harp-project/Core-Erlang-Formalization/tree/master/src/Interpreter), written as a Rocq function, that is proved equivalent to the frame-stack semantics. Being a plain function, it can be run inside Rocq and extracted to OCaml and Haskell. Furthermore, we also applied the semantics in several areas, the most important of which is program equivalence.
+Alongside the relational semantics, the development provides an [executable interpreter](https://github.com/harp-project/Core-Erlang-Formalization/tree/master/src/Interpreter), written as a Rocq function, that is proved equivalent to the frame-stack semantics. Being a plain function, it can be run inside Rocq or can be extracted to OCaml and Haskell. Furthermore, we also applied the semantics in several areas, the most important of which is program equivalence.
 
 # Program equivalence in Core Erlang
 
